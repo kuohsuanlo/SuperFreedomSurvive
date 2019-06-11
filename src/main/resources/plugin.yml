@@ -1,0 +1,39 @@
+name: SuperFreedomSurvive
+version: ${project.version}
+main: SuperFreedomSurvive.Index
+depend: [ItemNBTAPI]
+api-version: 1.13
+authors: [XUAN]
+commands:
+  tpa:
+    description: 傳送到其他玩家位置
+    usage: /<command> <player>
+    default: true
+  tpaok:
+    description: 接受 傳送請求
+    usage: /<command> <player>
+    default: true
+  tpano:
+    description: 拒絕 傳送請求
+    usage: /<command> <player>
+    default: true
+
+  world:
+    description: 多世界系統
+    usage: /<command>
+    default: op
+
+  inv:
+    description: 查看玩家庫存
+    usage: /<command>
+    default: op
+
+  chatroom:
+    description: 加入聊天室
+    usage: /<command>
+    default: true
+
+  test:
+    description: 測試用
+    usage: /<command>
+    default: op

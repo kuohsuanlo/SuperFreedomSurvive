@@ -1,0 +1,470 @@
+##### SQL配置 #####
+URL: null
+USER: null
+PASSWORD: null
+
+##### SQL資料表 #####
+  #-- 導出 minecraft-server_super-freedom-survive 的資料庫結構
+  #CREATE DATABASE IF NOT EXISTS `minecraft-server_super-freedom-survive` /*!40100 DEFAULT CHARACTER SET utf8 */;
+  #USE `minecraft-server_super-freedom-survive`;
+  #
+  #-- 導出  表 minecraft-server_super-freedom-survive.block-special_data 結構
+  #CREATE TABLE IF NOT EXISTS `block-special_data` (
+  #  `World` varchar(40) NOT NULL COMMENT '世界',
+  #  `X` smallint(6) NOT NULL COMMENT '座標 X',
+  #  `Y` tinyint(3) unsigned NOT NULL COMMENT '座標 Y',
+  #  `Z` smallint(6) NOT NULL COMMENT '座標 Z',
+  #  `Data` tinyint(4) NOT NULL COMMENT '資料值',
+  #  KEY `World` (`World`),
+  #  KEY `X` (`X`),
+  #  KEY `Y` (`Y`),
+  #  KEY `Z` (`Z`)
+  #) ENGINE=MyISAM DEFAULT CHARSET=utf8 COMMENT='方塊 特殊數據 資料';
+  #
+  #-- 資料導出被取消選擇。
+  #-- 導出  表 minecraft-server_super-freedom-survive.custom-monster_data 結構
+  #CREATE TABLE IF NOT EXISTS `custom-monster_data` (
+  #  `World` varchar(20) NOT NULL COMMENT '方塊放置世界',
+  #  `X` smallint(6) NOT NULL COMMENT '方塊放置座標X',
+  #  `Y` tinyint(3) unsigned NOT NULL COMMENT '方塊放置座標Y',
+  #  `Z` smallint(6) NOT NULL COMMENT '方塊放置座標Z',
+  #  `ID` char(20) NOT NULL COMMENT '唯一ID',
+  #  `Enable` tinyint(1) unsigned NOT NULL DEFAULT 0 COMMENT '啟用',
+  #  `Entity_Type` tinyint(2) unsigned NOT NULL DEFAULT 0 COMMENT '設置的怪物類型',
+  #  `Entity_Name` varchar(40) DEFAULT NULL COMMENT '怪物名稱',
+  #  `Entity_Helmet` tinyint(1) unsigned NOT NULL DEFAULT 0 COMMENT '怪物頭盔',
+  #  `Entity_Chestplate` tinyint(1) unsigned NOT NULL DEFAULT 0 COMMENT '怪物胸甲',
+  #  `Entity_Leggings` tinyint(1) unsigned NOT NULL DEFAULT 0 COMMENT '怪物護腿',
+  #  `Entity_Boots` tinyint(1) unsigned NOT NULL DEFAULT 0 COMMENT '怪物靴子',
+  #  `Entity_OffHand` tinyint(2) unsigned NOT NULL DEFAULT 0 COMMENT '怪物副手物品',
+  #  `Entity_MainHand` tinyint(2) unsigned NOT NULL DEFAULT 0 COMMENT '怪物主手物品',
+  #  `Entity_Enchant_Helmet` tinyint(1) unsigned NOT NULL DEFAULT 0 COMMENT '怪物頭盔 附魔特效',
+  #  `Entity_Enchant_Chestplate` tinyint(1) unsigned NOT NULL DEFAULT 0 COMMENT '怪物胸甲 附魔特效',
+  #  `Entity_Enchant_Leggings` tinyint(1) unsigned NOT NULL DEFAULT 0 COMMENT '怪物護腿 附魔特效',
+  #  `Entity_Enchant_Boots` tinyint(1) unsigned NOT NULL DEFAULT 0 COMMENT '怪物靴子 附魔特效',
+  #  `Entity_Enchant_OffHand` tinyint(1) unsigned NOT NULL DEFAULT 0 COMMENT '怪物副手物品 附魔特效',
+  #  `Entity_Enchant_MainHand` tinyint(1) unsigned NOT NULL DEFAULT 0 COMMENT '怪物主手物品 附魔特效',
+  #  `Entity_BossBar` tinyint(1) unsigned NOT NULL DEFAULT 0 COMMENT '怪物顯示BOSS血條',
+  #  `Attribute_GENERIC_ARMOR` mediumint(8) unsigned DEFAULT NULL COMMENT '屬性 護甲值',
+  #  `Attribute_GENERIC_ARMOR_TOUGHNESS` tinyint(2) unsigned DEFAULT NULL COMMENT '屬性 護甲耐久性值',
+  #  `Attribute_GENERIC_ATTACK_DAMAGE` mediumint(7) unsigned DEFAULT NULL COMMENT '屬性 攻擊傷害',
+  #  `Attribute_GENERIC_FOLLOW_RANGE` tinyint(2) unsigned DEFAULT NULL COMMENT '屬性 跟隨玩家的範圍',
+  #  `Attribute_GENERIC_KNOCKBACK_RESISTANCE` tinyint(3) unsigned DEFAULT NULL COMMENT '屬性 擊退抵抗力',
+  #  `Attribute_GENERIC_MAX_HEALTH` mediumint(7) unsigned DEFAULT NULL COMMENT '屬性 最大生命值',
+  #  `Attribute_GENERIC_MOVEMENT_SPEED` tinyint(3) unsigned DEFAULT NULL COMMENT '屬性 移動速度',
+  #  `Spawn_X` smallint(6) DEFAULT NULL COMMENT '生成的座標X',
+  #  `Spawn_Y` tinyint(3) unsigned DEFAULT NULL COMMENT '生成的座標Y',
+  #  `Spawn_Z` smallint(6) DEFAULT NULL COMMENT '生成的座標Z',
+  #  `Spawn_Amount` tinyint(1) unsigned NOT NULL DEFAULT 0 COMMENT '生成數量',
+  #  `Spawn_Delay` smallint(4) unsigned NOT NULL DEFAULT 0 COMMENT '生成延遲(秒)',
+  #  `Spawn_Player_Distance` tinyint(1) unsigned NOT NULL DEFAULT 0 COMMENT '生成玩家距離多少內觸發',
+  #  `Spawn_Range` tinyint(3) unsigned DEFAULT NULL COMMENT '以座標為中心點 半徑內隨機生成範圍',
+  #  `Activity_Range` tinyint(3) unsigned DEFAULT NULL COMMENT '可活動的範圍',
+  #  `Time_Spawn` bigint(20) unsigned NOT NULL DEFAULT 0 COMMENT '下次生成時間',
+  #  `Spawn_Min_X` smallint(6) DEFAULT NULL COMMENT '開始 X座標',
+  #  `Spawn_Min_Y` tinyint(3) unsigned DEFAULT NULL COMMENT '開始 Y座標',
+  #  `Spawn_Min_Z` smallint(6) DEFAULT NULL COMMENT '開始 Z座標',
+  #  `Spawn_Max_X` smallint(6) DEFAULT NULL COMMENT '結束 X座標',
+  #  `Spawn_Max_Y` tinyint(3) unsigned DEFAULT NULL COMMENT '結束 Y座標',
+  #  `Spawn_Max_Z` smallint(6) DEFAULT NULL COMMENT '結束 Z座標',
+  #  UNIQUE KEY `ID` (`ID`),
+  #  KEY `World` (`World`),
+  #  KEY `X` (`X`),
+  #  KEY `Y` (`Y`),
+  #  KEY `Z` (`Z`),
+  #  KEY `Spawn_X` (`Spawn_X`),
+  #  KEY `Spawn_Y` (`Spawn_Y`),
+  #  KEY `Spawn_Z` (`Spawn_Z`)
+  #) ENGINE=MyISAM DEFAULT CHARSET=utf8 COMMENT='自訂 怪物 資料';
+  #
+  #-- 資料導出被取消選擇。
+  #-- 導出  表 minecraft-server_super-freedom-survive.land-permissions_set-land_cache 結構
+  #CREATE TABLE IF NOT EXISTS `land-permissions_set-land_cache` (
+  #  `Player` varchar(16) NOT NULL COMMENT '玩家',
+  #  `ID` char(20) NOT NULL COMMENT '領地ID',
+  #  KEY `Player` (`Player`)
+  #) ENGINE=MEMORY DEFAULT CHARSET=utf8 COMMENT='領地 設定領地 緩存';
+  #
+  #-- 資料導出被取消選擇。
+  #-- 導出  表 minecraft-server_super-freedom-survive.land-protection_data 結構
+  #CREATE TABLE IF NOT EXISTS `land-protection_data` (
+  #  `World` varchar(40) NOT NULL COMMENT '地圖',
+  #  `Min_X` smallint(6) NOT NULL COMMENT '最小值 X',
+  #  `Min_Y` tinyint(3) unsigned NOT NULL COMMENT '最小值 Y',
+  #  `Min_Z` smallint(6) NOT NULL COMMENT '最小值 Z',
+  #  `Max_X` smallint(6) NOT NULL COMMENT '最大值 X',
+  #  `Max_Y` tinyint(3) unsigned NOT NULL COMMENT '最大值 Y',
+  #  `Max_Z` smallint(6) NOT NULL COMMENT '最大值 Z',
+  #  `Level` tinyint(2) unsigned NOT NULL DEFAULT 0 COMMENT '規劃層級 0最底 值越大越優先',
+  #  `Owner` varchar(16) NOT NULL COMMENT '目前擁有者',
+  #  `User` varchar(16) DEFAULT NULL COMMENT '目前使用者',
+  #  `Unable_Delete` tinyint(1) unsigned NOT NULL DEFAULT 0 COMMENT '是否不可刪除',
+  #  `ID` char(20) CHARACTER SET ascii NOT NULL COMMENT '唯一編號',
+  #  `Time` datetime NOT NULL COMMENT '創建時間',
+  #  `UserUsePermissions` tinyint(1) unsigned NOT NULL DEFAULT 0 COMMENT '使用者自己也被權限控制',
+  #  `Permissions_BlockBreak` tinyint(1) unsigned NOT NULL DEFAULT 0 COMMENT '權限 破壞方塊',
+  #  `Permissions_BlockDamage` tinyint(1) unsigned NOT NULL DEFAULT 0 COMMENT '權限 損壞方塊',
+  #  `Permissions_BlockExp` tinyint(1) unsigned NOT NULL DEFAULT 0 COMMENT '權限 方塊產生經驗',
+  #  `Permissions_BlockExplode` tinyint(1) unsigned NOT NULL DEFAULT 0 COMMENT '權限 爆炸破壞',
+  #  `Permissions_BlockFertilize` tinyint(1) unsigned NOT NULL DEFAULT 0 COMMENT '權限 骨粉使用',
+  #  `Permissions_BlockIgnite` tinyint(1) unsigned NOT NULL DEFAULT 0 COMMENT '權限 點燃方塊',
+  #  `Permissions_BlockMultiPlace` tinyint(1) unsigned NOT NULL DEFAULT 0 COMMENT '權限 放置多架構方塊(床/門)',
+  #  `Permissions_BlockPlace` tinyint(1) unsigned NOT NULL DEFAULT 0 COMMENT '權限 放置方塊',
+  #  `Permissions_SignChange` tinyint(1) unsigned NOT NULL DEFAULT 0 COMMENT '權限 告示牌輸入',
+  #  `Permissions_SpongeAbsorb` tinyint(1) unsigned NOT NULL DEFAULT 0 COMMENT '權限 海綿吸水',
+  #  `Permissions_TrampleFarmland` tinyint(1) unsigned NOT NULL DEFAULT 0 COMMENT '權限 踐踏農田',
+  #  `Permissions_BlockChange` tinyint(1) unsigned NOT NULL DEFAULT 1 COMMENT '權限 方塊自然更改/破壞',
+  #  `Permissions_AsyncPlayerChat` tinyint(1) unsigned NOT NULL DEFAULT 1 COMMENT '權限 發送訊息',
+  #  `Permissions_PlayerArmorStandManipulate` tinyint(1) unsigned NOT NULL DEFAULT 0 COMMENT '權限 盔甲座裝備拿取/放置',
+  #  `Permissions_PlayerBedEnter` tinyint(1) unsigned NOT NULL DEFAULT 0 COMMENT '權限 使用床',
+  #  `Permissions_PlayerBucketEmpty` tinyint(1) unsigned NOT NULL DEFAULT 0 COMMENT '權限 使用桶子(使用)',
+  #  `Permissions_PlayerBucket` tinyint(1) unsigned NOT NULL DEFAULT 0 COMMENT '權限 使用桶子(撈起)',
+  #  `Permissions_PlayerCommandPreprocess` tinyint(1) unsigned NOT NULL DEFAULT 1 COMMENT '權限 執行命令',
+  #  `Permissions_PlayerDropItem` tinyint(1) unsigned NOT NULL DEFAULT 1 COMMENT '權限 丟棄物品',
+  #  `Permissions_PlayerEditBook` tinyint(1) unsigned NOT NULL DEFAULT 1 COMMENT '權限 編輯書本',
+  #  `Permissions_PlayerEggThrow` tinyint(1) unsigned NOT NULL DEFAULT 1 COMMENT '權限 孵化雞蛋',
+  #  `Permissions_PlayerExpChange` tinyint(1) unsigned NOT NULL DEFAULT 1 COMMENT '權限 獲得經驗值',
+  #  `Permissions_PlayerFish` tinyint(1) unsigned NOT NULL DEFAULT 1 COMMENT '權限 釣魚',
+  #  `Permissions_PlayerInteractEntity` tinyint(1) unsigned NOT NULL DEFAULT 1 COMMENT '權限 點擊實體',
+  #  `Permissions_PlayerItemConsume` tinyint(1) unsigned NOT NULL DEFAULT 1 COMMENT '權限 食物/藥水消耗',
+  #  `Permissions_PlayerItemMend` tinyint(1) unsigned NOT NULL DEFAULT 1 COMMENT '權限 經驗修補耐久',
+  #  `Permissions_PlayerPickupArrow` tinyint(1) unsigned NOT NULL DEFAULT 1 COMMENT '權限 拾取弓箭',
+  #  `Permissions_PlayerPortal` tinyint(1) unsigned NOT NULL DEFAULT 1 COMMENT '權限 使用傳送門',
+  #  `Permissions_PlayerShearEntity` tinyint(1) unsigned NOT NULL DEFAULT 0 COMMENT '權限 修剪羊毛',
+  #  `Permissions_PlayerTeleport` tinyint(1) unsigned NOT NULL DEFAULT 1 COMMENT '權限 傳送',
+  #  `Permissions_PlayerJump` tinyint(1) unsigned NOT NULL DEFAULT 1 COMMENT '權限 跳躍',
+  #  `Permissions_PlayerToggleFlight` tinyint(1) unsigned NOT NULL DEFAULT 0 COMMENT '權限 飛行',
+  #  `Permissions_PlayerToggleSneak` tinyint(1) unsigned NOT NULL DEFAULT 1 COMMENT '權限 潛行',
+  #  `Permissions_PlayerToggleSprint` tinyint(1) unsigned NOT NULL DEFAULT 1 COMMENT '權限 奔跑',
+  #  `Permissions_PlayerVelocity` tinyint(1) unsigned NOT NULL DEFAULT 1 COMMENT '權限 移動變速',
+  #  `Permissions_PlayerWarp` tinyint(1) unsigned NOT NULL DEFAULT 1 COMMENT '權限 定點傳送過來',
+  #  `Permissions_PlayerNewWarp` tinyint(1) unsigned NOT NULL DEFAULT 1 COMMENT '權限 新增定點',
+  #  `Permissions_PlayerRespawn` tinyint(1) unsigned NOT NULL DEFAULT 0 COMMENT '權限 死亡後重生',
+  #  `Permissions_PlayerInventory` tinyint(1) unsigned NOT NULL DEFAULT 0 COMMENT '權限 拿取/放入物品到容器中',
+  #  `Permissions_PlayerEatCake` tinyint(1) unsigned NOT NULL DEFAULT 0 COMMENT '權限 吃蛋糕',
+  #  `Permissions_PlayerReadyArrow` tinyint(1) unsigned NOT NULL DEFAULT 1 COMMENT '權限 射出弓箭',
+  #  `Permissions_PlayerLaunchProjectile` tinyint(1) unsigned NOT NULL DEFAULT 1 COMMENT '權限 丟出投射物',
+  #  `Permissions_Interact_Chest` tinyint(1) unsigned NOT NULL DEFAULT 0 COMMENT '權限 物件 箱子',
+  #  `Permissions_Interact_TrappedChest` tinyint(1) unsigned NOT NULL DEFAULT 0 COMMENT '權限 物件 陷阱儲物箱',
+  #  `Permissions_Interact_EnderChest` tinyint(1) unsigned NOT NULL DEFAULT 0 COMMENT '權限 物件 末影箱子',
+  #  `Permissions_Interact_CraftingTable` tinyint(1) unsigned NOT NULL DEFAULT 0 COMMENT '權限 物件 工作臺',
+  #  `Permissions_Interact_Furnace` tinyint(1) unsigned NOT NULL DEFAULT 0 COMMENT '權限 物件 熔爐',
+  #  `Permissions_Interact_Hopper` tinyint(1) unsigned NOT NULL DEFAULT 0 COMMENT '權限 物件 漏斗',
+  #  `Permissions_Interact_Cauldron` tinyint(1) unsigned NOT NULL DEFAULT 0 COMMENT '權限 物件 鍋釜',
+  #  `Permissions_Interact_BrewingStand` tinyint(1) unsigned NOT NULL DEFAULT 0 COMMENT '權限 物件 釀造台',
+  #  `Permissions_Interact_EnchantTable` tinyint(1) unsigned NOT NULL DEFAULT 0 COMMENT '權限 物件 附魔台',
+  #  `Permissions_Interact_Beacon` tinyint(1) unsigned NOT NULL DEFAULT 0 COMMENT '權限 物件 烽火台',
+  #  `Permissions_Interact_ShulkerBox` tinyint(1) unsigned NOT NULL DEFAULT 0 COMMENT '權限 物件 界伏盒',
+  #  `Permissions_Interact_Jukebox` tinyint(1) unsigned NOT NULL DEFAULT 0 COMMENT '權限 物件 唱片機',
+  #  `Permissions_Interact_Note_Block` tinyint(1) unsigned NOT NULL DEFAULT 0 COMMENT '權限 物件 音符盒',
+  #  `Permissions_Interact_Anvil` tinyint(1) unsigned NOT NULL DEFAULT 0 COMMENT '權限 物件 鐵砧',
+  #  `Permissions_Interact_Painting` tinyint(1) unsigned NOT NULL DEFAULT 0 COMMENT '權限 物件 繪畫',
+  #  `Permissions_Interact_Sign` tinyint(1) unsigned NOT NULL DEFAULT 1 COMMENT '權限 物件 告示牌',
+  #  `Permissions_Interact_FlowerPot` tinyint(1) unsigned NOT NULL DEFAULT 0 COMMENT '權限 物件 花盆',
+  #  `Permissions_Interact_Dispenser` tinyint(1) unsigned NOT NULL DEFAULT 0 COMMENT '權限 物件 發射器',
+  #  `Permissions_Interact_Dropper` tinyint(1) unsigned NOT NULL DEFAULT 0 COMMENT '權限 物件 投擲器',
+  #  `Permissions_Interact_Lever` tinyint(1) unsigned NOT NULL DEFAULT 0 COMMENT '權限 物件 控制桿',
+  #  `Permissions_Interact_PressurePlate` tinyint(1) unsigned NOT NULL DEFAULT 0 COMMENT '權限 物件 壓力版',
+  #  `Permissions_Interact_Button` tinyint(1) unsigned NOT NULL DEFAULT 0 COMMENT '權限 物件 按鈕',
+  #  `Permissions_Interact_Trapdoor` tinyint(1) unsigned NOT NULL DEFAULT 0 COMMENT '權限 物件 地板門',
+  #  `Permissions_Interact_FenceGate` tinyint(1) unsigned NOT NULL DEFAULT 0 COMMENT '權限 物件 柵欄門',
+  #  `Permissions_Interact_DaylightDetector` tinyint(1) unsigned NOT NULL DEFAULT 0 COMMENT '權限 物件 日光感測器',
+  #  `Permissions_Interact_Door` tinyint(1) unsigned NOT NULL DEFAULT 0 COMMENT '權限 物件 門',
+  #  `Permissions_Interact_Repeater` tinyint(1) unsigned NOT NULL DEFAULT 0 COMMENT '權限 物件 紅石中繼器',
+  #  `Permissions_Interact_Comparator` tinyint(1) unsigned NOT NULL DEFAULT 0 COMMENT '權限 物件 紅石比較器',
+  #  `Permissions_Interact_Spawner` tinyint(1) unsigned NOT NULL DEFAULT 0 COMMENT '權限 物件 刷怪磚',
+  #  `Permissions_EntityChangeBlock` tinyint(1) unsigned NOT NULL DEFAULT 0 COMMENT '權限 實體 破壞/放置方塊',
+  #  `Permissions_EntityDamageByEntity` tinyint(1) unsigned NOT NULL DEFAULT 0 COMMENT '權限 玩家 攻擊實體',
+  #  `Permissions_Entity_Player` tinyint(1) unsigned NOT NULL DEFAULT 0 COMMENT '權限 玩家 攻擊玩家',
+  #  `Permissions_Entity_ArmorStand` tinyint(1) unsigned NOT NULL DEFAULT 0 COMMENT '權限 實體 盔甲座 破壞/放置/編輯',
+  #  `Permissions_Entity_ItemFrame_Use` tinyint(1) unsigned NOT NULL DEFAULT 0 COMMENT '權限 實體 物品展示框 使用',
+  #  `Permissions_Entity_ItemFrame_Change` tinyint(1) unsigned NOT NULL DEFAULT 0 COMMENT '權限 實體 物品展示框 破壞/放置',
+  #  `Permissions_Entity_Minecart_Use` tinyint(1) unsigned NOT NULL DEFAULT 0 COMMENT '權限 實體 礦車 進/出',
+  #  `Permissions_Entity_Minecart_Change` tinyint(1) unsigned NOT NULL DEFAULT 0 COMMENT '權限 實體 礦車 破壞/放置',
+  #  `Permissions_Entity_Minecart_Interact` tinyint(1) unsigned NOT NULL DEFAULT 0 COMMENT '權限 實體 礦車 容器交互',
+  #  `Permissions_Entity_Boat_Use` tinyint(1) unsigned NOT NULL DEFAULT 0 COMMENT '權限 實體 船 進/出',
+  #  `Permissions_Entity_Boat_Change` tinyint(1) unsigned NOT NULL DEFAULT 0 COMMENT '權限 實體 船 破壞/放置',
+  #  `Permissions_Entity_Egg_Storag` tinyint(1) unsigned NOT NULL DEFAULT 0 COMMENT '權限 實體 收納蛋 收納',
+  #  `Permissions_Entity_Egg_Place` tinyint(1) unsigned NOT NULL DEFAULT 0 COMMENT '權限 實體 收納蛋 放出',
+  #  UNIQUE KEY `ID` (`ID`),
+  #  KEY `World` (`World`),
+  #  KEY `Min_X` (`Min_X`),
+  #  KEY `Min_Z` (`Min_Z`),
+  #  KEY `Max_X` (`Max_X`),
+  #  KEY `Max_Z` (`Max_Z`),
+  #  KEY `Min_Y` (`Min_Y`),
+  #  KEY `Max_Y` (`Max_Y`)
+  #) ENGINE=MyISAM DEFAULT CHARSET=utf8 COMMENT='領地 資料';
+  #
+  #-- 資料導出被取消選擇。
+  #-- 導出  表 minecraft-server_super-freedom-survive.land-protection_new-land-level_cache 結構
+  #CREATE TABLE IF NOT EXISTS `land-protection_new-land-level_cache` (
+  #  `World` varchar(40) NOT NULL COMMENT '地圖',
+  #  `Player` varchar(16) NOT NULL COMMENT '玩家',
+  #  `Type` tinyint(1) unsigned NOT NULL DEFAULT 0 COMMENT '前次類型 1 起點 2 終點',
+  #  `X` smallint(6) NOT NULL COMMENT '前次 X',
+  #  `Y` tinyint(3) unsigned NOT NULL COMMENT '前次 Y',
+  #  `Z` smallint(6) NOT NULL COMMENT '前次 Z',
+  #  `End_X` smallint(6) DEFAULT NULL COMMENT '最後 X',
+  #  `End_Y` tinyint(3) unsigned DEFAULT NULL COMMENT '最後 Y',
+  #  `End_Z` smallint(6) DEFAULT NULL COMMENT '最後 Z',
+  #  `ID` char(20) NOT NULL COMMENT '前次領地ID',
+  #  KEY `Player` (`Player`)
+  #) ENGINE=MEMORY DEFAULT CHARSET=utf8 COMMENT='領地 新子領地 緩存';
+  #
+  #-- 資料導出被取消選擇。
+  #-- 導出  表 minecraft-server_super-freedom-survive.land-protection_new-land_cache 結構
+  #CREATE TABLE IF NOT EXISTS `land-protection_new-land_cache` (
+  #  `World` varchar(40) NOT NULL COMMENT '地圖',
+  #  `Player` varchar(16) NOT NULL COMMENT '玩家',
+  #  `Type` tinyint(1) unsigned NOT NULL DEFAULT 0 COMMENT '前次類型 1 起點 2 終點',
+  #  `X` smallint(6) NOT NULL COMMENT '前次 X',
+  #  `Y` tinyint(3) unsigned NOT NULL COMMENT '前次 Y',
+  #  `Z` smallint(6) NOT NULL COMMENT '前次 Z',
+  #  `End_X` smallint(6) DEFAULT NULL COMMENT '最後 X',
+  #  `End_Y` tinyint(3) unsigned DEFAULT NULL COMMENT '最後 Y',
+  #  `End_Z` smallint(6) DEFAULT NULL COMMENT '最後 Z',
+  #  KEY `Player` (`Player`)
+  #) ENGINE=MEMORY DEFAULT CHARSET=utf8 COMMENT='領地 新領地 緩存';
+  #
+  #-- 資料導出被取消選擇。
+  #-- 導出  表 minecraft-server_super-freedom-survive.land-share_data 結構
+  #CREATE TABLE IF NOT EXISTS `land-share_data` (
+  #  `ID` char(20) NOT NULL COMMENT '唯一編號',
+  #  `Player` char(16) NOT NULL COMMENT '共用人',
+  #  KEY `ID` (`ID`)
+  #) ENGINE=MyISAM DEFAULT CHARSET=utf8 COMMENT='領地 共用人 資料';
+  #
+  #-- 資料導出被取消選擇。
+  #-- 導出  表 minecraft-server_super-freedom-survive.player-additional-wood-axe_cache 結構
+  #CREATE TABLE IF NOT EXISTS `player-additional-wood-axe_cache` (
+  #  `World` varchar(40) NOT NULL COMMENT '世界',
+  #  `Player` varchar(16) NOT NULL COMMENT '玩家',
+  #  `X` smallint(6) NOT NULL COMMENT '座標X',
+  #  `Y` tinyint(3) unsigned NOT NULL COMMENT '座標Y',
+  #  `Z` smallint(6) NOT NULL COMMENT '座標Z',
+  #  `Material` varchar(40) NOT NULL COMMENT '方塊名稱',
+  #  `ID` char(20) CHARACTER SET ascii NOT NULL COMMENT '領地ID',
+  #  UNIQUE KEY `Player` (`Player`)
+  #) ENGINE=MEMORY DEFAULT CHARSET=utf8 COMMENT='玩家 額外功能 小木斧 緩存';
+  #
+  #-- 資料導出被取消選擇。
+  #-- 導出  表 minecraft-server_super-freedom-survive.player-additional-wood-axe_data 結構
+  #CREATE TABLE IF NOT EXISTS `player-additional-wood-axe_data` (
+  #  `World` varchar(50) NOT NULL COMMENT '世界',
+  #  `Start_X` smallint(6) NOT NULL COMMENT '開始座標X',
+  #  `Start_Y` tinyint(3) unsigned NOT NULL COMMENT '開始座標Y',
+  #  `Start_Z` smallint(6) NOT NULL COMMENT '開始座標Z',
+  #  `End_X` smallint(6) NOT NULL COMMENT '結束座標X',
+  #  `End_Y` tinyint(3) unsigned NOT NULL COMMENT '結束座標Y',
+  #  `End_Z` smallint(6) NOT NULL COMMENT '結束座標Z',
+  #  `Material` varchar(40) NOT NULL COMMENT '方塊名稱',
+  #  `Time` datetime NOT NULL COMMENT '創建時間',
+  #  KEY `Time` (`Time`)
+  #) ENGINE=MyISAM DEFAULT CHARSET=utf8 COMMENT='玩家 額外功能 小木斧 資料';
+  #
+  #-- 資料導出被取消選擇。
+  #-- 導出  表 minecraft-server_super-freedom-survive.player-additional_data 結構
+  #CREATE TABLE IF NOT EXISTS `player-additional_data` (
+  #  `Player` varchar(16) NOT NULL COMMENT '玩家',
+  #  `Function_Flight_Time` datetime NOT NULL DEFAULT '0000-00-00 00:00:01' COMMENT '功能 野外圖飛行 剩餘時間',
+  #  `Function_Rapid-Destruction_Time` datetime NOT NULL DEFAULT '0000-00-00 00:00:01' COMMENT '功能 快速破壞 剩餘時間',
+  #  `Function_Potion-Duration-Double_Time` datetime NOT NULL DEFAULT '0000-00-00 00:00:01' COMMENT '功能 藥水持續時間2倍 剩餘時間',
+  #  `Function_Potion-Lv-Double_Time` datetime NOT NULL DEFAULT '0000-00-00 00:00:01' COMMENT '功能 藥水效果等級2倍 剩餘時間',
+  #  `Function_Obtain-Experience-Double_Time` datetime NOT NULL DEFAULT '0000-00-00 00:00:01' COMMENT '功能 獲得經驗值2倍 剩餘時間',
+  #  `Function_Wood-Axe_Time` datetime NOT NULL DEFAULT '0000-00-00 00:00:01' COMMENT '功能 允許小木斧快速建造 剩餘時間',
+  #  UNIQUE KEY `Player` (`Player`)
+  #) ENGINE=MyISAM DEFAULT CHARSET=utf8 COMMENT='玩家 額外功能 資料';
+  #
+  #-- 資料導出被取消選擇。
+  #-- 導出  表 minecraft-server_super-freedom-survive.player-chat-record_data 結構
+  #CREATE TABLE IF NOT EXISTS `player-chat-record_data` (
+  #  `Player` varchar(16) NOT NULL COMMENT '玩家名稱',
+  #  `Time` datetime NOT NULL COMMENT '時間',
+  #  `Content` varchar(256) DEFAULT NULL COMMENT '內容',
+  #  KEY `Player` (`Player`),
+  #  KEY `Time` (`Time`)
+  #) ENGINE=MyISAM DEFAULT CHARSET=utf8 COMMENT='玩家 聊天紀錄 資料';
+  #
+  #-- 資料導出被取消選擇。
+  #-- 導出  表 minecraft-server_super-freedom-survive.player-chatroom_cache 結構
+  #CREATE TABLE IF NOT EXISTS `player-chatroom_cache` (
+  #  `Player` varchar(16) NOT NULL COMMENT '接收請求的玩家',
+  #  `Player_Join` varchar(16) NOT NULL COMMENT '發出邀請的玩家',
+  #  `ID` char(10) NOT NULL COMMENT '要加入的ID',
+  #  `Time` bigint(20) NOT NULL COMMENT '創建請求的時間',
+  #  KEY `Player_Join` (`Player_Join`)
+  #) ENGINE=MEMORY DEFAULT CHARSET=utf8 COMMENT='玩家 聊天室 緩存';
+  #
+  #-- 資料導出被取消選擇。
+  #-- 導出  表 minecraft-server_super-freedom-survive.player-chatroom_data 結構
+  #CREATE TABLE IF NOT EXISTS `player-chatroom_data` (
+  #  `Player` varchar(16) NOT NULL COMMENT '玩家',
+  #  `ID` char(10) NOT NULL COMMENT '聊天室ID'
+  #) ENGINE=MyISAM DEFAULT CHARSET=utf8 COMMENT='玩家 聊天室 資料';
+  #
+  #-- 資料導出被取消選擇。
+  #-- 導出  表 minecraft-server_super-freedom-survive.player-command_data 結構
+  #CREATE TABLE IF NOT EXISTS `player-command_data` (
+  #  `Player` char(16) NOT NULL COMMENT '玩家',
+  #  `Command_Land#Menu` char(16) NOT NULL COMMENT '指令 領地選單',
+  #  `Command_LandNew` char(16) DEFAULT NULL COMMENT '指令 新增 領地',
+  #  `Command_LandNewLevel` char(16) DEFAULT NULL COMMENT '指令 新增 子領地',
+  #  `Command_LandDelete` char(16) DEFAULT NULL COMMENT '指令 刪除 領地',
+  #  `Command_LandCurrent#Menu` char(16) NOT NULL COMMENT '指令 查看當前領地選單'
+  #) ENGINE=MyISAM DEFAULT CHARSET=utf8 COMMENT='玩家 自訂命令 資料';
+  #
+  #-- 資料導出被取消選擇。
+  #-- 導出  表 minecraft-server_super-freedom-survive.player-kit_data 結構
+  #CREATE TABLE IF NOT EXISTS `player-kit_data` (
+  #  `Player` varchar(16) NOT NULL COMMENT '玩家',
+  #  `Sender` varchar(16) DEFAULT NULL COMMENT '發送人',
+  #  `DisplayName` varchar(50) DEFAULT NULL COMMENT '標題',
+  #  `Lore` varchar(200) DEFAULT NULL COMMENT '詳細說明',
+  #  `Material` varchar(40) NOT NULL COMMENT '物品',
+  #  `Amount` tinyint(2) NOT NULL DEFAULT 1 COMMENT '數量',
+  #  `NamespacedKey` varchar(100) DEFAULT NULL COMMENT '特殊標籤',
+  #  `Start_Time` datetime NOT NULL COMMENT '發放時間',
+  #  `End_Time` datetime DEFAULT NULL COMMENT '失效時間',
+  #  `ID` char(10) NOT NULL COMMENT '編號',
+  #  UNIQUE KEY `ID` (`ID`),
+  #  KEY `Player` (`Player`),
+  #  KEY `End_Time` (`End_Time`)
+  #) ENGINE=MyISAM DEFAULT CHARSET=utf8 COMMENT='玩家 禮包 資料';
+  #
+  #-- 資料導出被取消選擇。
+  #-- 導出  表 minecraft-server_super-freedom-survive.player-location_data 結構
+  #CREATE TABLE IF NOT EXISTS `player-location_data` (
+  #  `Player` varchar(16) NOT NULL COMMENT '玩家名稱',
+  #  `World` varchar(50) NOT NULL COMMENT '世界',
+  #  `X` smallint(6) NOT NULL COMMENT 'X座標',
+  #  `Y` smallint(6) NOT NULL COMMENT 'Y座標',
+  #  `Z` smallint(6) NOT NULL COMMENT 'Z座標',
+  #  UNIQUE KEY `Player` (`Player`)
+  #) ENGINE=MyISAM DEFAULT CHARSET=utf8 COMMENT='玩家 座標 資料';
+  #
+  #-- 資料導出被取消選擇。
+  #-- 導出  表 minecraft-server_super-freedom-survive.player-spawn-location_data 結構
+  #CREATE TABLE IF NOT EXISTS `player-spawn-location_data` (
+  #  `Player` varchar(16) NOT NULL COMMENT '玩家名稱',
+  #  `World` varchar(50) NOT NULL COMMENT '世界',
+  #  `X` smallint(6) NOT NULL COMMENT 'X座標',
+  #  `Y` tinyint(3) unsigned NOT NULL COMMENT 'Y座標',
+  #  `Z` smallint(6) NOT NULL COMMENT 'Z座標',
+  #  `Time` datetime NOT NULL COMMENT '時間'
+  #) ENGINE=MyISAM DEFAULT CHARSET=utf8 COMMENT='玩家 重生點 資料';
+  #
+  #-- 資料導出被取消選擇。
+  #-- 導出  表 minecraft-server_super-freedom-survive.player-statistics_data 結構
+  #CREATE TABLE IF NOT EXISTS `player-statistics_data` (
+  #  `Player` varchar(16) NOT NULL COMMENT '玩家名稱',
+  #  `Login_Total` int(10) unsigned NOT NULL DEFAULT 0 COMMENT '登入總計次數',
+  #  `Dialogue_Total` int(10) unsigned NOT NULL DEFAULT 0 COMMENT '總對話次數',
+  #  `Use_CMD_Total` int(10) unsigned NOT NULL DEFAULT 0 COMMENT '使用指令次數',
+  #  UNIQUE KEY `Player` (`Player`)
+  #) ENGINE=MyISAM DEFAULT CHARSET=utf8 COMMENT='玩家 統計 資料';
+  #
+  #-- 資料導出被取消選擇。
+  #-- 導出  表 minecraft-server_super-freedom-survive.player-transfer_cache 結構
+  #CREATE TABLE IF NOT EXISTS `player-transfer_cache` (
+  #  `Player` varchar(16) NOT NULL COMMENT '接收請求的玩家名稱',
+  #  `Player_Tp` varchar(16) NOT NULL COMMENT '發出請求的玩家名稱',
+  #  `Time` bigint(20) NOT NULL COMMENT '創建請求的時間',
+  #  `Result` tinyint(4) NOT NULL DEFAULT 0 COMMENT '選項 0 未選擇 1 允許 2 拒絕',
+  #  KEY `Player_Tp` (`Player_Tp`),
+  #  KEY `Player` (`Player`)
+  #) ENGINE=MEMORY DEFAULT CHARSET=utf8 COMMENT='玩家 傳送 緩存';
+  #
+  #-- 資料導出被取消選擇。
+  #-- 導出  表 minecraft-server_super-freedom-survive.player-value_data 結構
+  #CREATE TABLE IF NOT EXISTS `player-value_data` (
+  #  `Player` varchar(16) NOT NULL COMMENT '名稱',
+  #  `Nick` varchar(26) DEFAULT NULL COMMENT '暱稱',
+  #  `ViewDistance` tinyint(1) unsigned NOT NULL DEFAULT 4 COMMENT '距離'
+  #) ENGINE=MyISAM DEFAULT CHARSET=utf8 COMMENT='玩家 設定值 資料';
+  #
+  #-- 資料導出被取消選擇。
+  #-- 導出  表 minecraft-server_super-freedom-survive.player-violation_data 結構
+  #CREATE TABLE IF NOT EXISTS `player-violation_data` (
+  #  `Player` varchar(16) NOT NULL COMMENT '玩家',
+  #  `Reason` varchar(40) NOT NULL COMMENT '違規原因',
+  #  `Severity` tinyint(3) unsigned NOT NULL COMMENT '嚴重程度',
+  #  `Time` datetime NOT NULL COMMENT '時間'
+  #) ENGINE=MyISAM DEFAULT CHARSET=utf8 COMMENT='玩家 違規 資料';
+  #
+  #-- 資料導出被取消選擇。
+  #-- 導出  表 minecraft-server_super-freedom-survive.player-warp_data 結構
+  #CREATE TABLE IF NOT EXISTS `player-warp_data` (
+  #  `Player` varchar(16) NOT NULL COMMENT '玩家',
+  #  `Public` tinyint(1) unsigned NOT NULL DEFAULT 0 COMMENT '是否公開',
+  #  `World` varchar(40) NOT NULL COMMENT '世界',
+  #  `X` smallint(6) NOT NULL COMMENT '座標X',
+  #  `Y` tinyint(3) unsigned NOT NULL COMMENT '座標Y',
+  #  `Z` smallint(6) NOT NULL COMMENT '座標Z',
+  #  `Time` datetime NOT NULL COMMENT '定點時間',
+  #  `Name` varchar(40) NOT NULL DEFAULT '傳送點' COMMENT '自訂名稱',
+  #  `Material` varchar(40) NOT NULL DEFAULT 'FEATHER' COMMENT '物件類型',
+  #  `Deadline` datetime DEFAULT NULL COMMENT '有效期限',
+  #  `ID` char(12) CHARACTER SET ascii DEFAULT NULL COMMENT '唯一編號',
+  #  UNIQUE KEY `ID` (`ID`),
+  #  KEY `Player` (`Player`),
+  #  KEY `Deadline` (`Deadline`)
+  #) ENGINE=MyISAM DEFAULT CHARSET=utf8 COMMENT='定點 資料';
+  #
+  #-- 資料導出被取消選擇。
+  #-- 導出  表 minecraft-server_super-freedom-survive.player_data 結構
+  #CREATE TABLE IF NOT EXISTS `player_data` (
+  #  `Presence` tinyint(1) unsigned NOT NULL DEFAULT 1 COMMENT '資料是否存在',
+  #  `Player` varchar(16) NOT NULL COMMENT '玩家名稱',
+  #  `UUID` char(36) NOT NULL COMMENT '玩家UUID',
+  #  `Login_First_Time` datetime NOT NULL COMMENT '初次登入時間',
+  #  `Login_Last_Time` datetime NOT NULL COMMENT '最後登入時間',
+  #  UNIQUE KEY `Player` (`Player`),
+  #  KEY `Login_Last_Time` (`Login_Last_Time`)
+  #) ENGINE=MyISAM DEFAULT CHARSET=utf8 COMMENT='玩家 基本 資料';
+  #
+  #-- 資料導出被取消選擇。
+  #-- 導出  表 minecraft-server_super-freedom-survive.store_skull-list_data 結構
+  #CREATE TABLE IF NOT EXISTS `store_skull-list_data` (
+  #  `Name` varchar(40) NOT NULL COMMENT '頭顱名稱',
+  #  `Price` tinyint(4) NOT NULL DEFAULT 1 COMMENT '價格',
+  #  `Purchases` int(11) NOT NULL DEFAULT 0 COMMENT '已購買次數',
+  #  `Tag` varchar(16) DEFAULT NULL COMMENT '標籤',
+  #  `Value` varchar(92) CHARACTER SET ascii NOT NULL COMMENT '資料',
+  #  `UUID` char(36) CHARACTER SET ascii NOT NULL COMMENT 'UUID',
+  #  UNIQUE KEY `UUID` (`UUID`),
+  #  KEY `Tag` (`Tag`)
+  #) ENGINE=MyISAM DEFAULT CHARSET=utf8 COMMENT='商店 全部頭顱 資料';
+  #
+  #-- 資料導出被取消選擇。
+  #-- 導出  表 minecraft-server_super-freedom-survive.world-list_data 結構
+  #CREATE TABLE IF NOT EXISTS `world-list_data` (
+  #  `Enable` tinyint(1) unsigned NOT NULL DEFAULT 1 COMMENT '是否啟用',
+  #  `Hide` tinyint(1) unsigned NOT NULL DEFAULT 0 COMMENT '是否隱藏',
+  #  `Name` varchar(20) CHARACTER SET ascii NOT NULL COMMENT '世界名稱',
+  #  `Environment` tinyint(1) unsigned NOT NULL DEFAULT 0 COMMENT '世界環境',
+  #  `Owner` varchar(16) CHARACTER SET ascii DEFAULT NULL COMMENT '擁有者',
+  #  `Size` smallint(5) unsigned NOT NULL COMMENT '世界限制大小(直徑)',
+  #  `PVP` tinyint(1) unsigned NOT NULL DEFAULT 0 COMMENT '是否能PVP',
+  #  `Difficulty` tinyint(1) unsigned NOT NULL DEFAULT 2 COMMENT '難度',
+  #  `GameMode` tinyint(1) unsigned NOT NULL DEFAULT 0 COMMENT '模式',
+  #  `Structures` tinyint(1) unsigned NOT NULL DEFAULT 0 COMMENT '是否生成結構',
+  #  `Transfer` tinyint(1) unsigned NOT NULL DEFAULT 1 COMMENT '是否允許傳送',
+  #  `Group` varchar(20) DEFAULT NULL COMMENT '類型組別',
+  #  `ID` varchar(40) DEFAULT NULL COMMENT '顯示物品ID',
+  #  `Description` varchar(40) DEFAULT NULL COMMENT '顯示名稱(不可重複)',
+  #  `Lore` varchar(40) DEFAULT NULL COMMENT '詳細說明',
+  #  `Start_Time` datetime DEFAULT NULL COMMENT '開始時間',
+  #  `End_Time` datetime DEFAULT NULL COMMENT '結束時間',
+  #  `KEEP_INVENTORY` tinyint(1) unsigned DEFAULT 1 COMMENT '玩家死亡防噴庫存',
+  #  `NATURAL_REGENERATION` tinyint(1) unsigned DEFAULT 1 COMMENT '玩家自然回復生命',
+  #  `MAX_ENTITY_CRAMMING` tinyint(2) unsigned DEFAULT 10 COMMENT '生物太多擁擠窒息',
+  #  `MOB_GRIEFING` tinyint(1) unsigned DEFAULT 1 COMMENT '生物拾取物品',
+  #  `DO_WEATHER_CYCLE` tinyint(1) unsigned DEFAULT 1 COMMENT '天氣變化',
+  #  `DO_FIRE_TICK` tinyint(1) unsigned DEFAULT 1 COMMENT '火焰自然熄滅/蔓延',
+  #  `DO_MOB_LOOT` tinyint(1) unsigned DEFAULT 1 COMMENT '生物死亡掉落物品',
+  #  `DO_MOB_SPAWNING` tinyint(1) unsigned DEFAULT 1 COMMENT '生物自然生成',
+  #  `DO_TILE_DROPS` tinyint(1) unsigned DEFAULT 1 COMMENT '破壞方塊掉落物品',
+  #  UNIQUE KEY `Name` (`Name`)
+  #) ENGINE=MyISAM DEFAULT CHARSET=utf8 COMMENT='世界 清單 資料';
+  #
