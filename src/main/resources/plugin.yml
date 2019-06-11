@@ -3,7 +3,7 @@ version: ${project.version}
 main: SuperFreedomSurvive.Index
 depend: [ItemNBTAPI]
 api-version: 1.13
-authors: [XUAN]
+authors: [XUAN_Cat]
 commands:
   tpa:
     description: 傳送到其他玩家位置
